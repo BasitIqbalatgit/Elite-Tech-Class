@@ -1,0 +1,93 @@
+/* 3 ways
+1. inline styling 
+2. internal sytling
+3. external
+
+
+priority -> inline 
+internal and external ma the below will be applied
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+#logo{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(0, 255, 221, 0.164);
+    padding: 20px;
+}
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
+    
+}
+ul li{
+    cursor: pointer;
+    position: relative;
+    padding: 3px;
+}
+ul li::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 2px;
+    background-color: black;
+    transition: width 0.9s ease-in-out;
+}
+ul li:hover::after{
+    width: 100%;
+}
+
+button{
+    background-color: rgb(2, 235, 60);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover{
+    background-color: black;
+}
+
+
+#mainContainer{
+    width: 100%;
+    height: 540px;
+    background-image: url("sky.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+#mainContainer h4{
+    font-size: 5rem;
+    padding: 25px;
+}
+
+#mainContainer p{
+    text-align: center;
+    width: 700px;
+}
