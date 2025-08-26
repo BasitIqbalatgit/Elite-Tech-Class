@@ -1,0 +1,26 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 500px;
+    height: 200px;
+}
+.card p{
+    font-size: 2rem;
+}
+
+.btn{
+    background-color: green;
+    font-size: 1.5rem;
+    border: 1px solid green;
+    border-radius: 5px;
+}
