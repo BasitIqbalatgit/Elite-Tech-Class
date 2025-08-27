@@ -1,7 +1,7 @@
 import React, { use } from 'react'
 import "./Dashbord.css"
 import { useLocation, useParams } from 'react-router-dom'
-export const Dashboard = () => {
+const  Dashboard = () => {
     const params =useParams();
 
     // const location = useLocation();
@@ -16,3 +16,5 @@ export const Dashboard = () => {
         </div>
     )
 }
+
+export default Dashboard;
