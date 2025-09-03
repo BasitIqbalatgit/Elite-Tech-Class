@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.container button{
+    background-color: green;
+    height: 50px;
+    width: 50px;
+    font-size: 3rem;
+    color: white;
+}
