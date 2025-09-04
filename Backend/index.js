@@ -23,6 +23,9 @@
 
 import express from "express" // 1.
 import cors from "cors";
+import studentRouter from "./routes/studentsRoutes.js";
+import testingRouter from "./routes/testingRoutes.js";
+
 const app = express();  // 2.
 const PORT = 5000
 // Middleware .... 
@@ -31,40 +34,30 @@ const PORT = 5000
 app.use(cors({origin:"http://localhost:5173"}))
 app.use(express.json())  // ---> req.body -->undefined
 
-let students= [
-    {id: 1 , name:"BASIT" , regNO: "FA21-BSE-050" },
-    {id: 2, name: "Shafqat", regNO: "FA21-BCS-010"},
-    {id: 3, name: "Fayaz", regNO: "FA27-BSE-030"},
-    {id: 4, name: "Rabail", regNO: "FA22-BSE-055"},
-    {id: 5, name: "Areeba", regNO: "FA24-BSE-058"},
-    {id: 6, name: "Tania", regNO: "FA24-BSE-020"},
-]
+
 
 // post , get, update(put,patch) , delete.
 
-app.get("/"   ,   (req,res)=>{
-    res.send(`Backend Server is running on port : ${PORT}`)
-})
-app.get("/shafqat" ,  (req,res)=>{
-    res.json({"id":1, name:"Shafqat"})
-})
 
+// testing
 
-app.get("/students",(req,res)=>{
-    res.json({status: 200, students})
-})
+// app.get("/"   ,  )
+app.use("/student" , testingRouter )
 
-app.post("/students",(req,res)=>{
-    const {id, name, regNO} = req.body;
-    students.push({id,name, regNO})
-    res.status(200).json({id,name,regNO})
-})
+app.use("/", testingRouter);
+// students 
+// app.get("/students",)
+// app.post("/students",)
+
+app.use("/students",studentRouter)
+app.use("/students", studentRouter);
+
 
 
 app.listen(PORT, ()=>{// 3. 
     console.log(`Express Server is running on ${PORT}`)
     console.log(`http://localhost:${PORT}`)
-    console.log(students)
+    
     
 const std = {id: 123, name:"Tania"}
 console.log(std.id)
